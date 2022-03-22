@@ -1,6 +1,6 @@
 let userAccessToken;
 const clientId = 'b5f5294b858246e297395f07b9373725';
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://ojknox.github.io/jammming/';
 
 const Spotify = {
     getAccessToken() {
