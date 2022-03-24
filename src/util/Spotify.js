@@ -25,7 +25,6 @@ const Spotify = {
             //this step redirects a user
             window.location.href = accessUrl;
         }
-        console.log(`user access token is ${userAccessToken}`);
     },
 
     search(term) {
@@ -36,7 +35,7 @@ const Spotify = {
         {headers: {
             Authorization: `Bearer ${accessToken}`
         }}).then(response => response.json()).then(jsonResponse => {
-            console.log(`jsonResponse is ${jsonResponse}`);
+            console.log(jsonResponse);
             if(!jsonResponse.tracks) {
                 return [];
             }
