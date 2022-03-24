@@ -25,15 +25,18 @@ const Spotify = {
             //this step redirects a user
             window.location.href = accessUrl;
         }
+        console.log(`user access token is ${userAccessToken}`);
     },
 
     search(term) {
         //have access to token while doing search
         const accessToken = Spotify.getAccessToken();
+        console.log(`Pressed search, access token is ${accessToken}`);
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, 
         {headers: {
             Authorization: `Bearer ${accessToken}`
         }}).then(response => response.json()).then(jsonResponse => {
+            console.log(`jsonResponse is ${jsonResponse}`);
             if(!jsonResponse.tracks) {
                 return [];
             }
